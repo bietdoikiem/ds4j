@@ -73,7 +73,7 @@ class LinkedList {
     // CASE 1: Delete at head
     if (cur != null && cur.value == key) {
       this.head = cur.next;
-      System.out.println(key + " found and deleted");
+      System.out.println(key + " was found and deleted");
       return cur;
     }
 
