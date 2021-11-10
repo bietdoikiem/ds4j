@@ -78,6 +78,10 @@ class LinkedListStack<T> {
     return currentSize == 0;
   }
 
+  public T peek() {
+    return this.head.data;
+  }
+
   /**
    * Print the items of the Stack (from top to bottom)
    */
