@@ -1,13 +1,26 @@
+import java.lang.reflect.Array;
 
 public class ArrayQueue<T> {
-  private int capacity;
-  private int size;
-  private T[] array;
+  protected int capacity;
+  protected int size;
+  protected T[] array;
 
   public ArrayQueue(int capacity) {
     this.capacity = capacity;
     this.size = 0;
     this.array = (T[]) new Object[capacity];
+  }
+
+  /**
+   * Constructor for extension/inheritance of child's type
+   * 
+   * @param clazz    Class name
+   * @param capacity Capacity of array
+   */
+  public ArrayQueue(Class<T> clazz, int capacity) {
+    this.capacity = capacity;
+    this.size = 0;
+    this.array = (T[]) Array.newInstance(clazz, capacity);
   }
 
   /**
@@ -110,7 +123,7 @@ public class ArrayQueue<T> {
       System.out.println("The queue is currently empty");
       return;
     }
-    System.err.print("The queue: ");
+    System.err.print("Current queue: ");
     for (int i = 0; i < size; i++) {
       System.out.print(array[i] + " ");
     }
